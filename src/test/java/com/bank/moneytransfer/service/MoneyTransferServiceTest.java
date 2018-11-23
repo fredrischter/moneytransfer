@@ -38,7 +38,22 @@ public class MoneyTransferServiceTest {
 	}
 
 	@Test
-	public void getBalanceExample() throws IOException {
+	public void creatingAccount() throws IOException {
+	}
+
+	@Test
+	public void transfering() throws IOException {
+	}
+
+	@Test
+	public void notEnoughBalance() throws IOException {
+	}
+
+	@Test
+	public void balanceCheck() throws IOException {
+		// Given
+		// Created account
+		
 		// When
 		// BigDecimal balance
 		

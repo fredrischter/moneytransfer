@@ -36,4 +36,22 @@ public class MoneyTransferIntegrationTest {
 		.then().statusCode(HttpStatus.NOT_FOUND.value());
 	}
 	
+	@Test
+	public void creatingAccount() {
+		//post deposit
+	}
+	
+	@Test
+	public void transfering() {
+		//post deposit
+		//post deposit
+		//transfer
+	}
+	
+	@Test
+	public void gettingBalance() {
+		//creatingAccount()
+		//post deposito
+	}
+	
 }

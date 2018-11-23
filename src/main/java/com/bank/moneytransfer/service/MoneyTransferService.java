@@ -24,7 +24,7 @@ public class MoneyTransferService {
 		
 	}
 
-	public void deposit(String account, BigDecimal amount) throws AccountNotFoundException {
+	public void deposit(String account, BigDecimal amount) {
 		// TODO Auto-generated method stub
 		
 	}
