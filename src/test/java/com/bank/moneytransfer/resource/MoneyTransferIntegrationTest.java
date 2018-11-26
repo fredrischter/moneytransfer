@@ -80,7 +80,7 @@ public class MoneyTransferIntegrationTest {
 		.when()
 			.get("/v1/moneytransfer/balance?account=111")
 		.then()
-			.body(IsEqual.equalTo("1000"));
+			.body(IsEqual.equalTo("1000.00"));
 	}
 	
 }

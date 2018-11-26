@@ -81,8 +81,8 @@ public class MoneyTransferServiceTest {
 		moneyTransferService.transfer(ACCOUNT_A, ACCOUNT_B, new BigDecimal(30));
 		
 		// Then
-		assertEquals(new BigDecimal(130), moneyTransferService.getBalance(ACCOUNT_B));
-		assertEquals(new BigDecimal(70), moneyTransferService.getBalance(ACCOUNT_A));
+		assertEquals(new BigDecimal(130).setScale(2), moneyTransferService.getBalance(ACCOUNT_B));
+		assertEquals(new BigDecimal(70).setScale(2), moneyTransferService.getBalance(ACCOUNT_A));
 	}
 	
 }
