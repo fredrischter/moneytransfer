@@ -9,3 +9,12 @@ RESTful API for money transfers between accounts.
 
 - Get balance: Will return the balance. It was needed for ensuring that the the transfering worked.
 
+## Exception handling
+
+AccountCreatedException happens when the account is created. It returns status code 201.
+
+AccountNotFoundException happens when it was suposed to the account to exist but don't. Returns 404.
+
+## Improvements
+
+Make the NotEnoughBalanceException (403 - Forbidden) case to return message explaining that the user is out of balance.

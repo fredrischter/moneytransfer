@@ -2,6 +2,7 @@ package com.bank.moneytransfer.resource;
 
 import static com.jayway.restassured.RestAssured.given;
 
+import org.hamcrest.core.IsEqual;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -38,20 +39,48 @@ public class MoneyTransferIntegrationTest {
 	
 	@Test
 	public void creatingAccount() {
-		//post deposit
+		given()
+			.port(port)
+		.when()
+			.post("/v1/moneytransfer/deposit?account=123&amount=1000")
+		.then().statusCode(HttpStatus.CREATED.value());
 	}
 	
 	@Test
 	public void transfering() {
-		//post deposit
-		//post deposit
-		//transfer
+		given()
+			.port(port)
+		.when()
+			.post("/v1/moneytransfer/deposit?account=111&amount=1000")
+		.then().statusCode(HttpStatus.CREATED.value());
+
+		given()
+			.port(port)
+		.when()
+			.post("/v1/moneytransfer/deposit?account=222&amount=1000")
+		.then().statusCode(HttpStatus.CREATED.value());
+
+		given()
+			.port(port)
+		.when()
+			.post("/v1/moneytransfer/transfer?originAccount=111&destinationAccount=222&amount=1000")
+		.then().statusCode(HttpStatus.OK.value());
 	}
 	
 	@Test
 	public void gettingBalance() {
-		//creatingAccount()
-		//post deposito
+		given()
+			.port(port)
+		.when()
+			.post("/v1/moneytransfer/deposit?account=111&amount=1000")
+		.then().statusCode(HttpStatus.CREATED.value());
+
+		given()
+			.port(port)
+		.when()
+			.get("/v1/moneytransfer/balance?account=111")
+		.then()
+			.body(IsEqual.equalTo("1000"));
 	}
 	
 }
