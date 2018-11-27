@@ -19,4 +19,4 @@ AccountNotFoundException happens when it was suposed to the account to exist but
 
 Make the NotEnoughBalanceException (403 - Forbidden) case to return message explaining that the user is out of balance.
 
-Force two digits on inputs, throwing 404 when receive numbers with more than two digits of precision.
+Force two digits on inputs, throwing 400 when receive numbers with more than two digits of precision.
